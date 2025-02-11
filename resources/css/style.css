@@ -1,0 +1,94 @@
+/* Stili generali */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Assicura che la pagina occupi tutta la finestra */
+    overflow-x: hidden;
+    background-color: #f4f4f4;
+}
+
+/* Container principale della timeline */
+.timeline {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Occupiamo tutta l'altezza della pagina */
+    overflow-y: auto; /* Permette di scorrere verticalmente */
+    padding: 50px 0;
+}
+
+/* Linea centrale della timeline */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background-color: #3b3b3b;
+    transform: translateX(-50%);
+}
+
+/* Stili per ogni evento */
+.event {
+    position: relative;
+    margin: 100px 0; /* Spazio tra gli eventi */
+    opacity: 0; /* Nascondiamo gli eventi inizialmente */
+    transition: opacity 0.6s ease-in-out;
+}
+
+/* Animazione degli eventi quando appaiono durante lo scroll */
+.event.show {
+    opacity: 1;
+}
+
+/* Stile per i contenuti degli eventi */
+.event .event-content {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    transition: transform 0.3s ease;
+}
+
+.event h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.event p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* Posizionamento degli eventi su entrambi i lati */
+.event:nth-child(odd) .event-content {
+    left: -55%;
+}
+
+.event:nth-child(even) .event-content {
+    left: 55%;
+}
+
+/* Cerchi per indicare gli anni */
+.event::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    width: 12px;
+    height: 12px;
+    background-color: #3b3b3b;
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+/*end of the style for the time line animation*/
+
+/*style class for the image*/
+.img-me{
+    width: 100%;
+    border-radius: 20px;
+    margin-left: 2px;
+}
